@@ -42,25 +42,46 @@
       url: "https://github.com/jonielbarreto/drone_ReID_track"
     },
     {
+      name: "frame-sequence-classification",
+      descEn: "3D CNN, CNN-LSTM, and CNN-Transformer models for frame-sequence classification.",
+      descPt: "Modelos CNN 3D, CNN-LSTM e CNN-Transformer para classificação de sequências de frames.",
+      tags: ["Python", "PyTorch"],
+      url: "https://github.com/jonielbarreto/frame-sequence-classification"
+    },
+    {
+      name: "VISAPP",
+      descEn: "Native YOLO vs. SAHI vs. temporal-consistency object detection benchmark.",
+      descPt: "Benchmark de detecção: YOLO nativo vs. SAHI vs. consistência temporal.",
+      tags: ["Python", "YOLO", "SAHI"],
+      url: "https://github.com/jonielbarreto/VISAPP"
+    },
+    {
+      name: "mmos_benchmark",
+      descEn: "YOLOv8s vs. RT-DETR-l vs. Faster R-CNN benchmark on the MMOS dataset.",
+      descPt: "Benchmark YOLOv8s vs. RT-DETR-l vs. Faster R-CNN no dataset MMOS.",
+      tags: ["Python", "Detection"],
+      url: "https://github.com/jonielbarreto/mmos_benchmark"
+    },
+    {
+      name: "Paper_SBSR",
+      descEn: "SAHI slice size x overlap vs. object pixel scale in maritime UAV imagery.",
+      descPt: "Tamanho de slice x sobreposição do SAHI vs. escala de pixels em imagens marítimas de UAV.",
+      tags: ["Python", "SAHI"],
+      url: "https://github.com/jonielbarreto/Paper_SBSR"
+    },
+    {
+      name: "class_fusion",
+      descEn: "Early, mid, and late fusion of RGB and thermal imagery for binary classification.",
+      descPt: "Fusão early, mid e late de imagens RGB e térmicas para classificação binária.",
+      tags: ["Python", "PyTorch"],
+      url: "https://github.com/jonielbarreto/class_fusion"
+    },
+    {
       name: "paper_lars",
       descEn: "Code accompanying a research paper.",
       descPt: "Código de apoio a um artigo de pesquisa.",
       tags: ["Python", "Research"],
       url: "https://github.com/jonielbarreto/paper_lars"
-    },
-    {
-      name: "dataVisualization",
-      descEn: "Data visualization in Python — core libraries and plotting patterns.",
-      descPt: "Visualização de dados em Python — bibliotecas e padrões de gráficos.",
-      tags: ["Python", "Jupyter"],
-      url: "https://github.com/jonielbarreto/dataVisualization"
-    },
-    {
-      name: "dataVisualizationR",
-      descEn: "Data visualization in R — core libraries and plotting patterns.",
-      descPt: "Visualização de dados em R — bibliotecas e padrões de gráficos.",
-      tags: ["R"],
-      url: "https://github.com/jonielbarreto/dataVisualizationR"
     }
   ];
 
