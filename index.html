@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joniel Barreto</title>
+<meta name="description" content="Joniel Barreto — Researcher in Computer Vision and Autonomous Systems. Links to publications, code, and academic profiles.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f6f7f9;
+    --text: #1a1d23;
+    --text-muted: #5b6270;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --border: #e4e7ec;
+    --card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11131a;
+      --bg-alt: #171a23;
+      --text: #e7e9ee;
+      --text-muted: #9aa3b2;
+      --accent: #5b8def;
+      --accent-hover: #7ba3f2;
+      --border: #272b36;
+      --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11131a;
+    --bg-alt: #171a23;
+    --text: #e7e9ee;
+    --text-muted: #9aa3b2;
+    --accent: #5b8def;
+    --accent-hover: #7ba3f2;
+    --border: #272b36;
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 20px 80px;
+  }
+  header.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  h1 {
+    font-size: 30px;
+    margin: 0;
+    letter-spacing: -0.3px;
+  }
+  .tagline {
+    color: var(--text-muted);
+    font-size: 17px;
+    margin: 2px 0 0;
+    max-width: 560px;
+  }
+  nav.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  nav.links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    background: var(--bg-alt);
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  nav.links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  nav.links svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  section { margin-top: 40px; }
+  section h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+  .about p { margin: 0 0 12px; color: var(--text); }
+
+  .projects {
+    display: grid;
+    gap: 14px;
+  }
+  .project {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    background: var(--bg-alt);
+    box-shadow: var(--card-shadow);
+  }
+  .project a.title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .project a.title:hover { color: var(--accent); }
+  .project p {
+    margin: 6px 0 0;
+    color: var(--text-muted);
+    font-size: 14.5px;
+  }
+  .project .meta {
+    margin-top: 10px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .more-link {
+    margin-top: 16px;
+    font-size: 14.5px;
+  }
+  .more-link a { color: var(--accent); text-decoration: none; }
+  .more-link a:hover { color: var(--accent-hover); }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="avatar">JB</div>
+    <h1>Joniel Barreto</h1>
+    <p class="tagline">Researcher working on computer vision and autonomous systems — object detection and tracking, drone-based perception, and applied machine learning.</p>
+    <nav class="links">
+      <a href="https://github.com/jonielbarreto" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.02 1.93-.02 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/joniel-bastos-barreto" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14.82 0H1.18C.53 0 0 .53 0 1.18v13.64C0 15.47.53 16 1.18 16h13.64c.65 0 1.18-.53 1.18-1.18V1.18C16 .53 15.47 0 14.82 0zM4.75 13.4H2.4V6.1h2.35v7.3zM3.58 5.1a1.36 1.36 0 110-2.72 1.36 1.36 0 010 2.72zM13.6 13.4h-2.35V9.85c0-.85-.02-1.94-1.18-1.94-1.18 0-1.36.92-1.36 1.88v3.61H6.36V6.1h2.26v1h.03c.31-.59 1.08-1.21 2.22-1.21 2.38 0 2.73 1.57 2.73 3.6v3.91z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://scholar.google.com/citations?user=8cSEkloAAAAJ" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.36 3.4A9.93 9.93 0 0112 9a9.93 9.93 0 017.64 3.9L24 9.5 12 0z"/></svg>
+        Google Scholar
+      </a>
+      <a href="https://orcid.org/0000-0001-9808-4430" target="_blank" rel="noopener">
+        <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121.9c-4.9 0-8.9-4-8.9-8.9s4-8.9 8.9-8.9 8.9 4 8.9 8.9-4 8.9-8.9 8.9zm108.9 121.9h-15.4v-55.2c0-13.2-4.7-22.3-17.2-22.3-9.4 0-15 6.3-17.4 12.4-.9 2.2-1.1 5.2-1.1 8.3v56.8H121V113.4c0-6.4-.1-11.6-.4-15.9h13.5l.7 14.3h.3c3.9-7.1 12.9-16.1 27.4-16.1 16.3 0 28.6 10.7 28.6 33.7v56.8z"/></svg>
+        ORCID
+      </a>
+      <a href="http://lattes.cnpq.br/5534614748123685" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm2 5v2h12V7H6zm0 4v2h12v-2H6zm0 4v2h8v-2H6z"/></svg>
+        Lattes CV
+      </a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h2>About</h2>
+    <p>I work on computer vision and autonomous systems, with a focus on object detection and tracking,
+       drone-based perception, and dataset curation for applied ML pipelines. I also contribute as a
+       peer reviewer for robotics venues such as ICRA.</p>
+  </section>
+
+  <section class="projects-section">
+    <h2>Selected Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <a class="title" href="https://github.com/jonielbarreto/drone_ReID_track" target="_blank" rel="noopener">drone_ReID_track</a>
+        <p>Drone-based object re-identification and tracking pipeline.</p>
+        <div class="meta">Python</div>
+      </div>
+      <div class="project">
+        <a class="title" href="https://github.com/jonielbarreto/paper_lars" target="_blank" rel="noopener">paper_lars</a>
+        <p>Code accompanying a research paper.</p>
+        <div class="meta">Python</div>
+      </div>
+      <div class="project">
+        <a class="title" href="https://github.com/jonielbarreto/dataVisualization" target="_blank" rel="noopener">dataVisualization</a>
+        <p>Data visualization in Python — core libraries and plotting patterns.</p>
+        <div class="meta">Jupyter Notebook</div>
+      </div>
+      <div class="project">
+        <a class="title" href="https://github.com/jonielbarreto/dataVisualizationR" target="_blank" rel="noopener">dataVisualizationR</a>
+        <p>Data visualization in R — core libraries and plotting patterns.</p>
+        <div class="meta">Jupyter Notebook</div>
+      </div>
+    </div>
+    <p class="more-link"><a href="https://github.com/jonielbarreto?tab=repositories" target="_blank" rel="noopener">See all repositories on GitHub →</a></p>
+  </section>
+
+  <footer>
+    Joniel Barreto · Updated via GitHub Pages
+  </footer>
+
+</div>
+</body>
+</html>
