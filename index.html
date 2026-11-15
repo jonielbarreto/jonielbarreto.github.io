@@ -1,236 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Joniel Barreto</title>
-<meta name="description" content="Joniel Barreto — Researcher in Computer Vision and Autonomous Systems. Links to publications, code, and academic profiles.">
-<style>
-  :root {
-    --bg: #ffffff;
-    --bg-alt: #f6f7f9;
-    --text: #1a1d23;
-    --text-muted: #5b6270;
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
-    --border: #e4e7ec;
-    --card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+<meta name="description" content="Joniel Barreto — Computer Vision &amp; Autonomous Systems researcher. Projects, publications and academic profiles.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Joniel Barreto">
+<meta property="og:description" content="Computer Vision & Autonomous Systems researcher. Projects, publications and academic profiles.">
+<meta property="og:image" content="https://jonielbarreto.github.io/assets/profile.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Joniel Barreto",
+    "image": "https://jonielbarreto.github.io/assets/profile.png",
+    "sameAs": [
+      "https://github.com/jonielbarreto",
+      "https://www.linkedin.com/in/joniel-bastos-barreto",
+      "https://scholar.google.com/citations?user=8cSEkloAAAAJ",
+      "https://orcid.org/0000-0001-9808-4430",
+      "http://lattes.cnpq.br/5534614748123685"
+    ]
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #11131a;
-      --bg-alt: #171a23;
-      --text: #e7e9ee;
-      --text-muted: #9aa3b2;
-      --accent: #5b8def;
-      --accent-hover: #7ba3f2;
-      --border: #272b36;
-      --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.4);
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #11131a;
-    --bg-alt: #171a23;
-    --text: #e7e9ee;
-    --text-muted: #9aa3b2;
-    --accent: #5b8def;
-    --accent-hover: #7ba3f2;
-    --border: #272b36;
-    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.4);
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.55;
-  }
-  .wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 56px 20px 80px;
-  }
-  header.hero {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 36px;
-  }
-  .avatar {
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), #8b5cf6);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-  h1 {
-    font-size: 30px;
-    margin: 0;
-    letter-spacing: -0.3px;
-  }
-  .tagline {
-    color: var(--text-muted);
-    font-size: 17px;
-    margin: 2px 0 0;
-    max-width: 560px;
-  }
-  nav.links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  nav.links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 7px 14px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    background: var(--bg-alt);
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-  nav.links a:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-  nav.links svg { width: 16px; height: 16px; flex-shrink: 0; }
-
-  section { margin-top: 40px; }
-  section h2 {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    margin: 0 0 16px;
-    font-weight: 600;
-  }
-  .about p { margin: 0 0 12px; color: var(--text); }
-
-  .projects {
-    display: grid;
-    gap: 14px;
-  }
-  .project {
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px 18px;
-    background: var(--bg-alt);
-    box-shadow: var(--card-shadow);
-  }
-  .project a.title {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text);
-    text-decoration: none;
-  }
-  .project a.title:hover { color: var(--accent); }
-  .project p {
-    margin: 6px 0 0;
-    color: var(--text-muted);
-    font-size: 14.5px;
-  }
-  .project .meta {
-    margin-top: 10px;
-    font-size: 12.5px;
-    color: var(--text-muted);
-  }
-  .more-link {
-    margin-top: 16px;
-    font-size: 14.5px;
-  }
-  .more-link a { color: var(--accent); text-decoration: none; }
-  .more-link a:hover { color: var(--accent-hover); }
-
-  footer {
-    margin-top: 56px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    color: var(--text-muted);
-    font-size: 13px;
-  }
-</style>
+}
+</script>
 </head>
-<body>
-<div class="wrap">
+<body class="lang-en">
 
-  <header class="hero">
-    <div class="avatar">JB</div>
-    <h1>Joniel Barreto</h1>
-    <p class="tagline">Researcher working on computer vision and autonomous systems — object detection and tracking, drone-based perception, and applied machine learning.</p>
-    <nav class="links">
-      <a href="https://github.com/jonielbarreto" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.02 1.93-.02 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/joniel-bastos-barreto" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14.82 0H1.18C.53 0 0 .53 0 1.18v13.64C0 15.47.53 16 1.18 16h13.64c.65 0 1.18-.53 1.18-1.18V1.18C16 .53 15.47 0 14.82 0zM4.75 13.4H2.4V6.1h2.35v7.3zM3.58 5.1a1.36 1.36 0 110-2.72 1.36 1.36 0 010 2.72zM13.6 13.4h-2.35V9.85c0-.85-.02-1.94-1.18-1.94-1.18 0-1.36.92-1.36 1.88v3.61H6.36V6.1h2.26v1h.03c.31-.59 1.08-1.21 2.22-1.21 2.38 0 2.73 1.57 2.73 3.6v3.91z"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://scholar.google.com/citations?user=8cSEkloAAAAJ" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.36 3.4A9.93 9.93 0 0112 9a9.93 9.93 0 017.64 3.9L24 9.5 12 0z"/></svg>
-        Google Scholar
-      </a>
-      <a href="https://orcid.org/0000-0001-9808-4430" target="_blank" rel="noopener">
-        <svg viewBox="0 0 256 256" fill="currentColor"><path d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zM86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-121.9c-4.9 0-8.9-4-8.9-8.9s4-8.9 8.9-8.9 8.9 4 8.9 8.9-4 8.9-8.9 8.9zm108.9 121.9h-15.4v-55.2c0-13.2-4.7-22.3-17.2-22.3-9.4 0-15 6.3-17.4 12.4-.9 2.2-1.1 5.2-1.1 8.3v56.8H121V113.4c0-6.4-.1-11.6-.4-15.9h13.5l.7 14.3h.3c3.9-7.1 12.9-16.1 27.4-16.1 16.3 0 28.6 10.7 28.6 33.7v56.8z"/></svg>
-        ORCID
-      </a>
-      <a href="http://lattes.cnpq.br/5534614748123685" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm2 5v2h12V7H6zm0 4v2h12v-2H6zm0 4v2h8v-2H6z"/></svg>
-        Lattes CV
-      </a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="mark" href="#top" aria-label="Home">JB</a>
+    <nav class="primary-nav">
+      <a href="#about"><span class="lang-en">About</span><span class="lang-pt">Sobre</span></a>
+      <a href="#projects"><span class="lang-en">Projects</span><span class="lang-pt">Projetos</span></a>
+      <a href="#publications"><span class="lang-en">Publications</span><span class="lang-pt">Publicações</span></a>
+      <a href="#contact"><span class="lang-en">Contact</span><span class="lang-pt">Contato</span></a>
     </nav>
-  </header>
-
-  <section class="about">
-    <h2>About</h2>
-    <p>I work on computer vision and autonomous systems, with a focus on object detection and tracking,
-       drone-based perception, and dataset curation for applied ML pipelines. I also contribute as a
-       peer reviewer for robotics venues such as ICRA.</p>
-  </section>
-
-  <section class="projects-section">
-    <h2>Selected Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <a class="title" href="https://github.com/jonielbarreto/drone_ReID_track" target="_blank" rel="noopener">drone_ReID_track</a>
-        <p>Drone-based object re-identification and tracking pipeline.</p>
-        <div class="meta">Python</div>
-      </div>
-      <div class="project">
-        <a class="title" href="https://github.com/jonielbarreto/paper_lars" target="_blank" rel="noopener">paper_lars</a>
-        <p>Code accompanying a research paper.</p>
-        <div class="meta">Python</div>
-      </div>
-      <div class="project">
-        <a class="title" href="https://github.com/jonielbarreto/dataVisualization" target="_blank" rel="noopener">dataVisualization</a>
-        <p>Data visualization in Python — core libraries and plotting patterns.</p>
-        <div class="meta">Jupyter Notebook</div>
-      </div>
-      <div class="project">
-        <a class="title" href="https://github.com/jonielbarreto/dataVisualizationR" target="_blank" rel="noopener">dataVisualizationR</a>
-        <p>Data visualization in R — core libraries and plotting patterns.</p>
-        <div class="meta">Jupyter Notebook</div>
+    <div class="topbar-actions">
+      <div class="lang-switch">
+        <button type="button" data-set-lang="en" class="active">EN</button>
+        <button type="button" data-set-lang="pt">PT</button>
       </div>
     </div>
-    <p class="more-link"><a href="https://github.com/jonielbarreto?tab=repositories" target="_blank" rel="noopener">See all repositories on GitHub →</a></p>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">
+          <span class="lang-en">Computer Vision · Autonomous Systems · Research</span>
+          <span class="lang-pt">Visão Computacional · Sistemas Autônomos · Pesquisa</span>
+        </p>
+        <h1>Joniel Barreto</h1>
+        <h2>
+          <span class="lang-en">Researcher in Computer Vision &amp; Autonomous Systems</span>
+          <span class="lang-pt">Pesquisador em Visão Computacional e Sistemas Autônomos</span>
+        </h2>
+        <p class="lead">
+          <span class="lang-en">I work on object detection and tracking, drone-based perception, and dataset
+            curation for applied machine-learning pipelines in autonomous systems. I also serve as a peer
+            reviewer for robotics venues such as ICRA.</span>
+          <span class="lang-pt">Atuo em detecção e rastreamento de objetos, percepção baseada em drones e
+            curadoria de datasets para pipelines de aprendizado de máquina aplicados a sistemas autônomos.
+            Também atuo como revisor em conferências de robótica como a ICRA.</span>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">
+            <span class="lang-en">View projects →</span>
+            <span class="lang-pt">Ver projetos →</span>
+          </a>
+          <a class="btn btn-ghost" href="#contact">
+            <span class="lang-en">Get in touch</span>
+            <span class="lang-pt">Entrar em contato</span>
+          </a>
+        </div>
+        <div class="affiliation">
+          <span class="dot"></span>
+          <div>
+            <b>Instituto Tecnológico de Aeronáutica (ITA)</b><br>
+            <span class="lang-en">São José dos Campos, Brazil</span>
+            <span class="lang-pt">São José dos Campos, Brasil</span>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat">
+            <b id="repoCount">—</b>
+            <span><span class="lang-en">Public repositories</span><span class="lang-pt">Repositórios públicos</span></span>
+          </div>
+          <div class="stat">
+            <b>ICRA</b>
+            <span><span class="lang-en">Peer reviewer</span><span class="lang-pt">Revisor</span></span>
+          </div>
+          <div class="stat">
+            <b>CV · AuSSys</b>
+            <span><span class="lang-en">Research focus</span><span class="lang-pt">Foco de pesquisa</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait">
+          <img src="assets/profile.png" width="280" height="280" alt="Joniel Barreto">
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    Joniel Barreto · Updated via GitHub Pages
-  </footer>
+  <section class="section alt" id="about">
+    <div class="container">
+      <p class="section-label">01 · <span class="lang-en">About</span><span class="lang-pt">Sobre</span></p>
+      <div class="about-grid">
+        <div>
+          <p>
+            <span class="lang-en">I'm a researcher focused on computer vision and autonomous systems, working
+              on object detection, multi-object tracking, and drone-based perception pipelines.</span>
+            <span class="lang-pt">Sou pesquisador com foco em visão computacional e sistemas autônomos,
+              atuando em detecção de objetos, rastreamento multi-objeto e pipelines de percepção baseados
+              em drones.</span>
+          </p>
+        </div>
+        <div>
+          <p>
+            <span class="lang-en">My work spans dataset curation and annotation tooling, model training and
+              evaluation, and the engineering needed to take a detection pipeline from a research prototype
+              to something that runs reliably on real platforms.</span>
+            <span class="lang-pt">Meu trabalho abrange curadoria e anotação de datasets, treinamento e
+              avaliação de modelos, e a engenharia necessária para levar um pipeline de detecção de um
+              protótipo de pesquisa a algo que funciona de forma confiável em plataformas reais.</span>
+          </p>
+          <div class="chips">
+            <span>Computer Vision</span>
+            <span>Object Detection</span>
+            <span>Multi-Object Tracking</span>
+            <span>Autonomous Systems</span>
+            <span>Deep Learning</span>
+            <span>PyTorch</span>
+            <span>Drone Perception</span>
+            <span>Dataset Curation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="section-label">02 · <span class="lang-en">Projects</span><span class="lang-pt">Projetos</span></p>
+      <div class="section-head">
+        <h2><span class="lang-en">Selected Projects</span><span class="lang-pt">Projetos Selecionados</span></h2>
+        <p>
+          <span class="lang-en">Open-source code from my research — more projects are published regularly.</span>
+          <span class="lang-pt">Código aberto do meu trabalho de pesquisa — mais projetos são publicados regularmente.</span>
+        </p>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+      <p class="more-projects">
+        <a href="https://github.com/jonielbarreto?tab=repositories" target="_blank" rel="noopener">
+          <span class="lang-en">See all repositories on GitHub →</span>
+          <span class="lang-pt">Ver todos os repositórios no GitHub →</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section alt" id="publications">
+    <div class="container">
+      <p class="section-label">03 · <span class="lang-en">Publications</span><span class="lang-pt">Publicações</span></p>
+      <div class="section-head">
+        <h2><span class="lang-en">Academic Profiles &amp; Publications</span><span class="lang-pt">Perfis Acadêmicos e Publicações</span></h2>
+        <p>
+          <span class="lang-en">Find my full publication record and CV on the profiles below.</span>
+          <span class="lang-pt">Veja o histórico completo de publicações e o currículo nos perfis abaixo.</span>
+        </p>
+      </div>
+      <div class="profile-links">
+        <a href="https://scholar.google.com/citations?user=8cSEkloAAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a>
+        <a href="http://lattes.cnpq.br/5534614748123685" target="_blank" rel="noopener">Lattes CV ↗</a>
+        <a href="https://orcid.org/0000-0001-9808-4430" target="_blank" rel="noopener">ORCID ↗</a>
+        <a href="https://github.com/jonielbarreto" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+      <div class="featured-pub">
+        <span class="tag"><span class="lang-en">Featured publication</span><span class="lang-pt">Publicação em destaque</span></span>
+        <h3>
+          <span class="lang-en">Frame-sequence classification for autonomous systems</span>
+          <span class="lang-pt">Classificação de sequências de frames para sistemas autônomos</span>
+        </h3>
+        <p>
+          <span class="lang-en">Work on sequence-based classification models (3D CNN, CNN-LSTM, CNN-Transformer) applied to autonomous systems perception.</span>
+          <span class="lang-pt">Trabalho sobre modelos de classificação baseados em sequência (CNN 3D, CNN-LSTM, CNN-Transformer) aplicados à percepção em sistemas autônomos.</span>
+        </p>
+        <a href="https://www.scitepress.org/Papers/2026/143453/143453.pdf" target="_blank" rel="noopener">
+          <span class="lang-en">Read the paper ↗</span>
+          <span class="lang-pt">Ler o artigo ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <p class="section-label">04 · <span class="lang-en">Contact</span><span class="lang-pt">Contato</span></p>
+      <h2><span class="lang-en">Let's connect</span><span class="lang-pt">Vamos nos conectar</span></h2>
+      <p>
+        <span class="lang-en">Interested in collaborating on computer vision or autonomous systems research? Reach out on LinkedIn or check my work on GitHub.</span>
+        <span class="lang-pt">Interessado em colaborar em pesquisa de visão computacional ou sistemas autônomos? Entre em contato pelo LinkedIn ou veja meu trabalho no GitHub.</span>
+      </p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/joniel-bastos-barreto" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="https://github.com/jonielbarreto" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Joniel Barreto · <span class="lang-en">Built with GitHub Pages</span><span class="lang-pt">Construído com GitHub Pages</span></span>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
